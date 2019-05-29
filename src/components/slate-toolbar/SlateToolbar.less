@@ -1,0 +1,159 @@
+.Container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column
+}
+.ImageDiv{
+    margin-left: -25px;
+    display: flex;
+    align-items: flex-start;
+    width: 565px;
+
+}
+.Image{
+    width:28px;
+    height: 30px;
+}
+.Headline{
+   
+    border:0px;
+    margin-left: 15px;
+    width: 500px;
+   
+}
+
+.Ol{
+    counter-reset: my-awesome-counter;
+
+}
+.Li{
+    counter-increment: my-awesome-counter;
+
+}
+.Li::before{
+    content: counter(my-awesome-counter,decimal) ". ";
+
+}
+.InputDiv{
+   
+}
+.AddMediaDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.TextDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.TextData{
+    display: flex;
+    width: 500px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.CloseImage{
+    width:28px;
+    height:30px;
+    animation: CloseImage-spin  0.1s linear
+}
+.AddImage{
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+}
+.AddVideo{
+    width: 21px;
+    margin-right: 10px;
+
+}
+.AddSlides{
+    margin-right: 10px;
+
+}
+.AddSnippet{
+    margin-right: 10px;
+
+}
+.MediaDiv{
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #cdcfd2;
+    height: 25px;
+    align-items: center;
+    margin-left: 15px;
+    position: relative;
+}
+
+
+.MediaDiv:hover{
+    transition: 1s;
+    left: 0;
+}
+
+
+.IconDiv{
+    display: flex;
+    
+    align-items: center;
+    width: 58.23px;
+    height: 17px;
+}
+.IconTitleDiv{
+    font-size: x-small
+}
+@keyframes CloseImage-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(90deg);
+    }
+  }
+ 
+  .Text:focus{
+    outline: 0px solid transparent;
+  }
+  .Text{
+    list-style-type: disc;
+
+  }
+  
+  
+  
+ 
+  @media screen and(max-width:750px){
+    .TextData{
+        width: 70%;
+
+    }
+    .MediaDiv{
+        width: 100%;
+        height: 160px !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: grid;
+        margin-left: 3px;
+    }
+    .ImageDiv{
+        width: 90%;
+        margin-left: 5px
+    }
+    .IconDiv{
+        width: 100%
+    }
+    .AddMediaDiv{
+        justify-content: flex-start;    
+
+    }
+    .Headline{
+        width: 100%
+    }
+
+
+  }

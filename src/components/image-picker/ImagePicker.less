@@ -1,0 +1,148 @@
+@import "../../less/App.less";
+.Container {
+  display: flex;
+  transition: left .5s cubic-bezier(0.820, 0.085, 0.395, 0.895);
+}
+.Container-toggle {
+  position: relative;
+  opacity: 0;
+}
+
+#Label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../assets/AddImage.png");
+  background-repeat: no-repeat;
+  line-height: 90;
+  width: 100%;
+  background-position: center;
+  opacity: 0.5;
+  cursor: pointer;
+  height: 200px !important;
+  text-align: center;
+  overflow: hidden;
+  padding: 200px 0 0 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#Label:hover {
+  opacity: unset;
+}
+.CloseImageDiv {
+  display: none;
+}
+.Container:hover .CloseImageDiv {
+  display: block;
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  opacity: 0.4;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+}
+
+.CloseImageDiv:hover {
+  background-color: #006097;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.SubImageDiv {
+  flex: 1;
+  position: relative;
+  background-color: #f3f6f8;
+  border-bottom: 1px solid #e1e9ee;
+}
+.UploadImageDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.UploadImageContainerDiv {
+  display: flex;
+  height: 400px;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.UploadImageContainer {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grabbing;
+
+  position: relative;
+}
+.UploadImageContainer:hover .DeleteDiv {
+  position: absolute;
+  bottom: 10px;
+  border-radius: 9px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 12.5px;
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+
+}
+
+.DeleteDiv:hover{
+    color: #f3f6f8;
+    cursor: pointer;
+    background-color:@light-blue !important;
+    overflow: hidden;
+
+}
+
+
+
+.UploadImageContainer:hover {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+  overflow: hidden;
+
+}
+#Image {
+  width: 100%;
+  height: 100%;
+}
+#Text {
+  border-width: 0;
+  text-align: center;
+  width: 500px;
+  font-size: x-small;
+  margin-top: 10px;
+}
+
+.DeleteDiv {
+  display: none;
+}
+#Delete:hover {
+    color: #006097
+}
+.ImageDiv {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and(max-width:768px) {
+  .UploadImageContainer {
+    width: 80%;
+  }
+  #Text {
+    width: 80%;
+ 
+  
+ }
+ #CloseImage{
+  display: none
+}
+}

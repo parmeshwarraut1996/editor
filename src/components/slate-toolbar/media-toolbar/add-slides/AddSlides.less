@@ -1,0 +1,46 @@
+.IconDiv{
+    display: flex;
+    
+    align-items: initial;
+    width: 58.23px;
+    height: 17px;
+}
+.IconTitleDiv{
+    font-size: x-small
+}
+.AddSlides{
+    width: 16px;
+    margin-right: 10px;
+
+}
+.ImageDiv{
+    width: 27px
+}
+.Container{
+    transition-property: background-color,box-shadow,color,-webkit-box-shadow;
+    -webkit-transition-timing-function: cubic-bezier(0,0,.2,1);
+    transition-timing-function: cubic-bezier(0,0,.2,1)
+    }
+    @media screen and(max-width:750px){
+        .ImageDiv{
+            width: 20px
+        }
+        .IconTitleDiv{
+            font-size: medium;
+            width: 68px;
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 8px;
+
+        }
+        .Container{
+            display: flex;
+            width: 180px;
+            
+        }
+        .IconDiv{
+            height: 20px;
+            width: 100%;
+    
+        }
+    }

@@ -1,0 +1,100 @@
+.ToolBar{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+    max-height: 38px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition-timing-function: cubic-bezier(0,0,.2,1);
+}
+.Header{
+    margin-block-start: 15px;
+    font-weight: normal;
+    font-size: 15px
+}
+.VerticleLine{
+    width: 1px;
+    height: 18px;
+    background-color: black;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.NormalText{
+    font-size: 14px;
+}
+.LeftQuotes{
+    width: 18px;
+    height: 18px;
+}
+.AddLink{
+    .LeftQuotes();
+}
+.MarginDiv{
+    margin-left: 10px;
+}
+.Bold{
+    cursor: pointer;
+}
+.Bold:hover{
+    background: 0 0;
+    border-radius: 2px;
+}
+#BtnBold{
+    min-width: 0;
+}
+#BtnItal{
+    min-width: 0;
+}
+#BtnUnderline{
+    min-width: 0;
+}
+#BtnNumberList{
+    min-width: 0;
+}
+#BtnBulletList{
+    min-width: 0;
+}
+#BtnLeftQuotes{
+    min-width: 0;
+}
+#BtnAddLink{
+    min-width: 0;
+}
+#A{
+    font-size: 18px;
+    font-weight: bold
+}
+#H{
+    margin: 0
+
+}
+.MenuItems{
+    padding: 4px
+}
+.DownArrow{
+    width: 24px;
+    height: 24px;
+}
+.HeadingTextDiv{
+    display: flex;
+    align-items: center;
+}
+#AddCover{
+    border: 0;
+    background: transparent;
+}
+
+@media screen and(max-width:750px){
+    .VerticleLine{
+        margin-left: 0;
+        margin-right: 0;
+
+    }
+    .NormalText{
+        margin-right: 7px;
+    }
+    .AddCoverDiv{
+        display: none;
+    }
+}

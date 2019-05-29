@@ -1,0 +1,83 @@
+import React, { Component } from "react";
+import { MuiThemeProvider, createMuiTheme, Tooltip } from "@material-ui/core/";
+import style from "./ImagePicker.less";
+import { UPLOAD_IMAGE } from "../../constants/actionTypes";
+import {connect} from 'react-redux'
+var close = require("../../assets/close.png");
+
+const theme = createMuiTheme({
+  overrides: {
+    MuiInputBase: {
+      root: {
+        width: "100%",
+        backgroundColor: "#F3F6F8;",
+        borderBottom: "1px solid #E1E9EE",
+        position: "relative"
+      }
+    }
+  }
+});
+
+function mapStateToProps(state) {
+  return {
+    show: state.imagePicker.upload
+  };
+}
+
+const mapDispatchToProps = dispatch => ({
+  uploadImage: () =>
+    dispatch({
+      type: UPLOAD_IMAGE
+    })
+});
+
+class ImagePicker extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedFile: null
+    };
+    this.fileChangedHandler = this.fileChangedHandler.bind(this);
+  }
+
+  fileChangedHandler(event) {   
+     console.log("image in "+this.state.selectedFile);
+
+
+    this.setState({ selectedFile: URL.createObjectURL(event.target.files[0]) });
+    console.log("image in "+this.state.selectedFile);
+    
+    this.props.uploadImage();
+  }
+
+  render() {
+    return (
+      <MuiThemeProvider theme={theme}>
+        <div className={style.Container}>
+          <div className={style.UploadImageDiv}>
+            {this.props.show ? (
+              <input
+                id={style.Label}
+                type="file"
+                onChange={event => this.fileChangedHandler(event)}
+              />
+            ) : (
+              <img src={this.state.selectedFile} alt="" />
+            )}
+          </div>
+          <Tooltip
+            disableFocusListener
+            disableTouchListener
+            placement="left"
+            title="Remove cover"
+          >
+            <div className={style.ImageDiv}>
+              <img src={close} alt="" />
+            </div>
+          </Tooltip>
+        </div>
+      </MuiThemeProvider>
+    );
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps) (ImagePicker);
